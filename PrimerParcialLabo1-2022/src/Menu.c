@@ -17,7 +17,7 @@ int mostrarMenu(void)
 			"2. MODIFICACION\n\n"
 			"3. BAJA\n\n"
 			"4. LISTAR VIVIENDAS\n\n"
-			"5. LISTAR CENSISTAS\n"
+			"5. LISTAR CENSISTAS\n\n"
 			"6. FINALIZAR PROGRAMA\n"
 			"\nIngrese una opcion:\t");
 	fflush(stdin);
@@ -63,7 +63,7 @@ int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
 
 
 							  //CANTIDAD DE HABITACIONES
-		cantidadHabitaciones = getInt("\n\nIngrese estado del vuelo\t", 0, 30, 5);
+		cantidadHabitaciones = getInt("\n\nIngrese cantidad de habitaciones\t", 0, 30, 5);
 
 
 
@@ -76,7 +76,7 @@ int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
 
 
 							//LEGAJO DEL CENSISTA
-		LegajoCensista = getInt("\n\nIngrese estado del vuelo\t", 0, 100, 5);
+		LegajoCensista = getInt("\n\nIngrese legajo del censista\t", 0, 100, 5);
 
 		// PASO EL PUNTERO A VARIABLE LOCAL
 		idViviendaAux = *idVivienda;
