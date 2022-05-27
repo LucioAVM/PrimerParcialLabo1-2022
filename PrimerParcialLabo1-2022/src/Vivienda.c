@@ -152,8 +152,6 @@ void mostrarUnaVivienda(eVivienda viviendaMain)
 
 	LegajoCensista = viviendaMain.LegajoCensista;
 
-
-
 	printf( " %4d        %4s      %5d        %5d            %5s                   %5d 			\n",id ,calle, cantidadPersonas, cantidadHabitaciones, tipoVivienda,LegajoCensista);
 }
 

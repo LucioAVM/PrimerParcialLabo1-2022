@@ -18,7 +18,9 @@ int mostrarMenu(void)
 			"3. BAJA\n\n"
 			"4. LISTAR VIVIENDAS\n\n"
 			"5. LISTAR CENSISTAS\n\n"
-			"6. FINALIZAR PROGRAMA\n"
+			"6. LISTAR CENSISTAS POR VIVIENDA\n\n"
+			"7. MOSTRAR CENSISTAS CON MAS CENSOS REALIZADOS"
+			"8. FINALIZAR PROGRAMA\n"
 			"\nIngrese una opcion:\t");
 	fflush(stdin);
 	scanf("%d", &retorno);
