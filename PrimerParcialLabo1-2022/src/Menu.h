@@ -31,12 +31,13 @@ int mostrarMenu(void);
  * DESCRIPCION	da de alta una nueva vivienda y lo carga en la estructura main
  *
  * PARAMETRO	eVivienda viviendaMain[]
+ * PARAMETRO	eCensista censistaMain[]
  * PARAMETRO	int TAM
  * PARAMETRO	int *idVivienda
  *
  * RETORNO		0 = ERROR  1 = ALTA EXITOSA
  */
-int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda);
+int altaVivienda(eVivienda viviendaMain[], eCensista censistaMain[],int TAM, int *idVivienda);
 
 /**
  * DESCRIPCION	busca por id a la vivienda y modifica lo que el usuario pida dentro de las opciones
@@ -75,9 +76,8 @@ void listarViviendas(eVivienda viviendaMain[], int TAM);
  * DESCRIPCION	realiza una lista de los censistas
  *
  * PARAMETRO	eCensista censistaMain[]
- * PARAMETRO	int TamCENSISTA
  *
  * RETORNO		void
  */
-void listarCensistas(eCensista censistaMain[], int TamCENSISTA);
+void listarCensistas(eCensista censistaMain[]);
 #endif /* MENU_H_ */

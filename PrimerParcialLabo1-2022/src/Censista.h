@@ -23,11 +23,19 @@ typedef struct
  * DESCRIPCION	muestra el array de la estructura eCensistas
  *
  * PARAMETRO	eCensista censistaMain
- * PARAMETRO	int TAM
  *
  * RETORNO		void
  */
-void mostrarUnCensista(eCensista censistaMain, int TAM);
+void mostrarUnCensista(eCensista censistaMain);
 
+
+/**
+ * DESCRIPCION	muestra todo el array de censistas
+ *
+ * PARAMETRO	eCensista censistaMain[]
+ *
+ * RETORNO		void
+ */
+void mostrarCensistas(eCensista censistaMain[]);
 
 #endif /* CENSISTA_H_ */

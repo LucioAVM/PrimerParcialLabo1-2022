@@ -46,7 +46,7 @@ int main(void)
 		switch(menu)
 		{
 		case 1:
-			if(altaVivienda(viviendaMain,TAM, &idVivienda))//si la funcion devuelve 0 es verdadero(usar para validar)
+			if(altaVivienda(viviendaMain, censistaMain,TAM, &idVivienda))//si la funcion devuelve 0 es verdadero(usar para validar)
 			{
 				printf("\n-----Vivienda dada de alta exitosamente----\n");
 				bandera = 1;
@@ -78,17 +78,25 @@ int main(void)
 			break;
 
 		case 5:
-			listarCensistas(censistaMain, TamCENSISTA);
+			listarCensistas(censistaMain);
 			break;
 
 		case 6:
+			listaCencistaConViviendas(viviendaMain, censistaMain, TAM);
+			break;
+
+		case 7:
+			cencistasConMasCensos(viviendaMain, censistaMain, TAM);
+			break;
+
+		case 8:
 			printf( "\n           GRACIAS POR UTILIZAR ESTE PROGRAMA\n"
-					"             PRODUCIDO POR Monsalbo lucio\n"
-					"              EDITADO POR Lucio Monsalbo\n"
-					"         BUILDEADO POR Alejandro Lucio Monsalbo\n"
-					"        TESTEADO POR Valerio Alejandro Monsalbo\n"
-					"        ENVIADO POR Monsalbo Lucio Alejandro Valerio\n"
-					"   AGRADECIMIENTO ESPECIAL A Lucio Alejandro Valerio Monsalbo\n");
+								"             PRODUCIDO POR Monsalbo lucio\n"
+								"              EDITADO POR Lucio Monsalbo\n"
+								"         BUILDEADO POR Alejandro Lucio Monsalbo\n"
+								"        TESTEADO POR Valerio Alejandro Monsalbo\n"
+								"        ENVIADO POR Monsalbo Lucio Alejandro Valerio\n"
+								"   AGRADECIMIENTO ESPECIAL A Lucio Alejandro Valerio Monsalbo\n");
 			break;
 		}
 	}while(menu != 6);

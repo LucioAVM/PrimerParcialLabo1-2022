@@ -26,7 +26,7 @@ int mostrarMenu(void)
 	return retorno;
 }
 
-int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
+int altaVivienda(eVivienda viviendaMain[], eCensista censistaMain[],int TAM, int *idVivienda)
 {
 	int retorno = 0;
 
@@ -76,7 +76,9 @@ int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
 
 
 							//LEGAJO DEL CENSISTA
-		LegajoCensista = getInt("\n\nIngrese legajo del censista\t", 0, 100, 5);
+		mostrarCensistas(censistaMain);
+
+		LegajoCensista = getInt("\n\nIngrese legajo del censista\t", 99, 104, 5);
 
 		// PASO EL PUNTERO A VARIABLE LOCAL
 		idViviendaAux = *idVivienda;
@@ -180,12 +182,12 @@ int modificarVivienda(eVivienda viviendaMain[], int TAM)
 					printf( "ORIGINAL:"
 							" ____________________________________________________________________________________________________________\n"
 							"|---ID-------CALLE-------CANTIDAD DE PERSONAS-------CANTIDAD DE HABITACIONES-------TIPO DE VIVIENDA----------| \n");
-					mostrarUnaVivienda(auxiliar, TAM);
+					mostrarUnaVivienda(auxiliar);
 
 					printf( "MODIFICADO:"
 							" __________________________________________________________________________________________________________\n"
 							"|---ID-------CALLE-------CANTIDAD DE PERSONAS-------CANTIDAD DE HABITACIONES-------TIPO DE VIVIENDA----------|\n");
-					mostrarUnaVivienda(viviendaMain[index], TAM);
+					mostrarUnaVivienda(viviendaMain[index]);
 
 					printf("\nDesea realizar las siguientes modificaciones?\n"
 							"1_ SI\n"
@@ -234,7 +236,7 @@ int bajaVivienda(eVivienda viviendaMain[], int TAM)
 	printf("\n\tQuiere dar de baja la siguiente vivienda?\n"
 			" ____________________________________________________________________________________________________________\n"
 			"|---ID-------CALLE-------CANTIDAD DE PERSONAS-------CANTIDAD DE HABITACIONES-------TIPO DE VIVIENDA----------| \n");
-	mostrarUnaVivienda(viviendaMain[index], TAM);
+	mostrarUnaVivienda(viviendaMain[index]);
 	printf("1- SI\n"
 			"2- NO\n"
 			"Ingrese la opcion deseada:\n");
@@ -259,17 +261,13 @@ void listarViviendas(eVivienda viviendaMain[], int TAM)
 {
 	ordenarViviendas(viviendaMain, TAM);
 
-	printf(" ____________________________________________________________________________________________________________\n"
-			"|---ID-------CALLE-------CANTIDAD DE PERSONAS-------CANTIDAD DE HABITACIONES-------TIPO DE VIVIENDA----------| \n");
 	mostrarViviendas(viviendaMain, TAM);
 }
 
-void listarCensistas(eCensista censistaMain[], int TamCENSISTA)
+void listarCensistas(eCensista censistaMain[])
 {
-	int i;
-	for(i = 0 ; i < 4 ; i++)
-	{
-		mostrarUnCensista(censistaMain[i], TamCENSISTA);
-	}
+		mostrarCensistas(censistaMain);
 }
+
+
 

@@ -95,11 +95,10 @@ void idATipo(int idVivienda, char tipoVivinda[]);
  * DESCRIPCION	muestra una sola vivienda
  *
  * PARAMETRO	eVivienda viviendaMain
- * PARAMETRO	int TAM
  *
  * RETORNO		void
  */
-void mostrarUnaVivienda(eVivienda viviendaMain, int TAM);
+void mostrarUnaVivienda(eVivienda viviendaMain);
 
 
 /**
@@ -134,5 +133,9 @@ int findViviendaById(eVivienda viviendaMain[], int TAM, int id);
  * RETORNO		void
  */
 void ordenarViviendas(eVivienda viviendaMain[], int TAM);
+
+void listaCencistaConViviendas(eVivienda viviendaMain[], eCensista censistaMain[], int TAM);
+
+void cencistasConMasCensos(eVivienda viviendaMain[], eCensista censistaMain[], int TAM);
 
 #endif /* VIVIENDA_H_ */

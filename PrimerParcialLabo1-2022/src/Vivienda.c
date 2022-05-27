@@ -14,9 +14,6 @@
 void eVivienda_Inicializar(eVivienda viviendaMain[], int TAM)
 {
 	int i;
-	int retorno;
-
-	retorno = 1;
 
 	if (viviendaMain != NULL && TAM > 0)
 	{
@@ -24,9 +21,7 @@ void eVivienda_Inicializar(eVivienda viviendaMain[], int TAM)
 		{
 			viviendaMain[i].isEmpty = LIBRE;
 		}
-		retorno = 0;
 	}
-	return retorno;
 }
 
 
@@ -77,7 +72,7 @@ int addVivienda(eVivienda viviendaMain[]
 	validacion = -1;
 	retorno = 0;
 
-	if(viviendaMain != NULL && libre > -1 && calle != NULL && cantidadPersonas > 0 && cantidadHabitaciones > 0 && TipoVivienda < 4 && TipoVivienda < 0 && LegajoCensista < 0)
+	if(viviendaMain != NULL && libre > -1 && calle != NULL && cantidadPersonas > 0 && cantidadHabitaciones > 0 && TipoVivienda < 4 && TipoVivienda > 0 && LegajoCensista < 0)
 	{
 		eVivienda auxiliar;
 
@@ -137,7 +132,7 @@ void idATipo(int idVivienda, char tipoVivinda[])
 	}
 }
 
-void mostrarUnaVivienda(eVivienda viviendaMain, int TAM)
+void mostrarUnaVivienda(eVivienda viviendaMain)
 {
 	int id;
 	char calle[25];
@@ -173,7 +168,7 @@ void mostrarViviendas(eVivienda viviendaMain[], int TAM)
 	{
 		if(viviendaMain[i].isEmpty == OCUPADO)
 		{
-			mostrarUnaVivienda(viviendaMain[i],TAM);
+			mostrarUnaVivienda(viviendaMain[i]);
 		}
 	}
 	printf( "|_____________________________________________________________________________________________________________________| \n");
@@ -226,3 +221,97 @@ void ordenarViviendas(eVivienda viviendaMain[], int TAM)
     	}
     }
 }
+
+
+void listaCencistaConViviendas(eVivienda viviendaMain[], eCensista censistaMain[], int TAM)
+{
+	int i;
+	int censista;
+	int contador;
+
+	contador = 0;
+
+	for(i = 0 ; i < 3 ; i++)
+	{
+		mostrarUnCensista(censistaMain[i]);
+
+		censista = censistaMain[i].legajoCensista;
+
+		do
+		{
+			if(viviendaMain[i].LegajoCensista == censista)
+			{
+				mostrarUnaVivienda(viviendaMain[i]);
+
+			}
+			contador++;
+
+		}while(contador < TAM);
+	}
+
+}
+
+
+void cencistasConMasCensos(eVivienda viviendaMain[], eCensista censistaMain[], int TAM)
+{
+	int i;
+	int j;
+	int censista;
+	int contador;
+	int arrayCensistas[3];
+	int masCensosRealizados;
+	int legajoMayorCensista;
+
+	eCensista mayorCensador;
+
+	censista = 0;
+	masCensosRealizados = 0;
+
+	for(i = 0 ; i < TAM ; i++)
+	{
+		//CONTROLA LOS CENSISTAS
+		if(censista < censistaMain[i].legajoCensista)
+		{
+			censista = censistaMain[i].legajoCensista;
+			contador = 0;
+		}
+
+		//CUENTA LAS VIVIENDAS DE LOS CENSISTAS
+		if(viviendaMain[i].LegajoCensista == censista)
+		{
+			contador ++;
+			arrayCensistas[i] = contador;
+		}
+	}
+
+	for(j = 0 ; j <3 ; j ++)
+	{
+		//BUSCA EL MAYOR CENSISTA
+		if(masCensosRealizados < arrayCensistas[j])
+		{
+			legajoMayorCensista = arrayCensistas[j];
+		}
+
+		if(legajoMayorCensista == censistaMain[j].legajoCensista)
+		{
+			mayorCensador = censistaMain[j];
+		}
+	}
+	mostrarUnCensista(mayorCensador);
+}
+
+
+
+/**
+ * else{
+			if(censista == 1)
+			{
+				censista = censistaAuxiliar;
+			}else{
+				if(censista != censistaAuxiliar)
+				{
+
+				}
+			}
+		}
+ */

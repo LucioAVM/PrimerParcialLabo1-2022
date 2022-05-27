@@ -7,7 +7,7 @@
 #include "Censista.h"
 #include <string.h>
 
-void mostrarUnCensista(eCensista censistaMain, int TAM)
+void mostrarUnCensista(eCensista censistaMain)
 {
 	int legajo;
 	char Nombre[25];
@@ -19,6 +19,16 @@ void mostrarUnCensista(eCensista censistaMain, int TAM)
 	edad = censistaMain.edad;
 	telefono = censistaMain.telefono;
 
-	printf( "----LEGAJO----NOMBRE----EDAD----TELEFONO----"
-			"      %4d        %4s      %5d        %5ld \n",legajo ,Nombre, edad, telefono);
+	printf("      %4d        %4s      %5d        %5ld \n",legajo ,Nombre, edad, telefono);
+}
+
+void mostrarCensistas(eCensista censistaMain[])
+{
+	int i;
+	printf("----LEGAJO----NOMBRE----EDAD----TELEFONO----\n");
+
+	for(i = 0 ; i < 3 ; i++)
+	{
+		mostrarUnCensista(censistaMain[i]);
+	}
 }
