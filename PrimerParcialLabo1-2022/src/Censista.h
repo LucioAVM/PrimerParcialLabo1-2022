@@ -19,6 +19,15 @@ typedef struct
 	long int telefono;
 }eCensista;
 
+
+/**
+ * DESCRIPCION	muestra el array de la estructura eCensistas
+ *
+ * PARAMETRO	eCensista censistaMain
+ * PARAMETRO	int TAM
+ *
+ * RETORNO		void
+ */
 void mostrarUnCensista(eCensista censistaMain, int TAM);
 
 

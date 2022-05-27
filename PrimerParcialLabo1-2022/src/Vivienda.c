@@ -5,7 +5,10 @@
  *      Author: Ususario
  */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
 #include "vivienda.h"
 
 int eVivienda_Inicializar(eVivienda viviendaMain[], int TAM)
@@ -61,7 +64,7 @@ int eVivienda_ObtenerLibre(eVivienda viviendaMain[], int TAM)
 int addVivienda(eVivienda viviendaMain[]
 		, int *idViviendaAux
 		, int libre
-		, char *calle
+		, char calle[]
 		, int cantidadPersonas
 		, int cantidadHabitaciones
 		, int TipoVivienda

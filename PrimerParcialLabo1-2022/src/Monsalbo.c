@@ -70,7 +70,8 @@ int getInt(char mensaje[], int minimo, int maximo, int reintentos)
 
 				/* **************************VALIDACION CARACTERES*************************** */
 //
-int getChar(char resultado[], char *mensaje, char *mensajeError, int reintentos) {
+int getChar(char resultado[], char mensaje[], char mensajeError[], int reintentos)
+{
 	int retorno;
 	char auxiliarChar[100];
 

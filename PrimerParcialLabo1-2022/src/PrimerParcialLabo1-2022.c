@@ -10,10 +10,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "Vivienda.h"
 #include "Censista.h"
 #include "menu.h"
+
 #define TAM 5
+#define TamCENSISTA 3
 
 int main(void)
 {
@@ -47,7 +50,7 @@ int main(void)
 			break;
 
 		case 2:
-			if(modificarpasajero(viviendaMain, TAM))
+			if(modificarVivienda(viviendaMain, TAM))
 			{
 				printf("Vivienda se ah modificado exitosamente\n");
 			}else{
@@ -65,21 +68,21 @@ int main(void)
 			break;
 
 		case 4:
-			if(listarViviendas(viviendaMain, TAM))
-			{
-				printf("Vivienda se ah listado exitosamente\n");
-			}else{
-				printf("Ah ocurrido un error, intente nuevamente\n");
-			}
+			listarViviendas(viviendaMain, TAM);
 			break;
 
 		case 5:
-			if(listarCensistas(censistaMain))
-			{
-				printf("Cencistas listados exitosamente\n");
-			}else{
-				printf("Ah ocurrido un error, intente nuevamente\n");
-			}
+			listarCensistas(censistaMain, TamCENSISTA);
+			break;
+
+		case 6:
+			printf( "\n           GRACIAS POR UTILIZAR ESTE PROGRAMA\n"
+					"             PRODUCIDO POR Monsalbo lucio\n"
+					"              EDITADO POR Lucio Monsalbo\n"
+					"         BUILDEADO POR Alejandro Lucio Monsalbo\n"
+					"        TESTEADO POR Valerio Alejandro Monsalbo\n"
+					"        ENVIADO POR Monsalbo Lucio Alejandro Valerio\n"
+					"   AGRADECIMIENTO ESPECIAL A Lucio Alejandro Valerio Monsalbo\n");
 			break;
 		}
 	}while(menu != 6);

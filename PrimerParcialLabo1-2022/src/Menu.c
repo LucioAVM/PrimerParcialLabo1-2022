@@ -4,11 +4,8 @@
  *  Created on: 26 may. 2022
  *      Author: Ususario
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "Vivienda.h"
-#include "Monsalbo.h"
+
+#include "Menu.h"
 
 int mostrarMenu(void)
 {
@@ -49,7 +46,7 @@ int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
 
 	if(libre != -1)
 	{
-		//PIDE DATOS DEL PASAJERO AL USUARIO
+		//PIDE DATOS DE LA VIVIENDA AL USUARIO
 								    //CALLE
 
 		validacionCalle = getStringLetras("\n\nIngresar nombre de la cale:\t", calle);
@@ -81,6 +78,7 @@ int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
 							//LEGAJO DEL CENSISTA
 		LegajoCensista = getInt("\n\nIngrese estado del vuelo\t", 0, 100, 5);
 
+		// PASO EL PUNTERO A VARIABLE LOCAL
 		idViviendaAux = *idVivienda;
 
 
@@ -105,7 +103,7 @@ int altaVivienda(eVivienda viviendaMain[],int TAM, int *idVivienda)
 	return retorno;
 }
 
-int modificarpasajero(eVivienda viviendaMain[], int TAM)
+int modificarVivienda(eVivienda viviendaMain[], int TAM)
 {
 	int retorno;
 	int menu;
@@ -264,5 +262,14 @@ void listarViviendas(eVivienda viviendaMain[], int TAM)
 	printf(" ____________________________________________________________________________________________________________\n"
 			"|---ID-------CALLE-------CANTIDAD DE PERSONAS-------CANTIDAD DE HABITACIONES-------TIPO DE VIVIENDA----------| \n");
 	mostrarViviendas(viviendaMain, TAM);
+}
+
+void listarCensistas(eCensista censistaMain[], int TamCENSISTA)
+{
+	int i;
+	for(i = 0 ; i < 4 ; i++)
+	{
+		mostrarUnCensista(censistaMain[i], TamCENSISTA);
+	}
 }
 
