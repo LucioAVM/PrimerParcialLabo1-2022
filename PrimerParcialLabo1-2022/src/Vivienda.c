@@ -11,7 +11,7 @@
 
 #include "vivienda.h"
 
-int eVivienda_Inicializar(eVivienda viviendaMain[], int TAM)
+void eVivienda_Inicializar(eVivienda viviendaMain[], int TAM)
 {
 	int i;
 	int retorno;

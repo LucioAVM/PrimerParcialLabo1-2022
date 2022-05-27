@@ -17,9 +17,9 @@ int mostrarMenu(void)
 			"2. MODIFICACION\n\n"
 			"3. BAJA\n\n"
 			"4. LISTAR VIVIENDAS\n\n"
-			"5. LISTAR CENSISTAS"
+			"5. LISTAR CENSISTAS\n"
 			"6. FINALIZAR PROGRAMA\n"
-			"Ingrese una opcion:\t");
+			"\nIngrese una opcion:\t");
 	fflush(stdin);
 	scanf("%d", &retorno);
 

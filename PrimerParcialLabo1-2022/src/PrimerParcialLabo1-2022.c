@@ -37,6 +37,8 @@ int main(void)
 
 	idVivienda = 19999;
 
+	eVivienda_Inicializar( viviendaMain, TAM);
+
 	do
 	{
 		menu = mostrarMenu();

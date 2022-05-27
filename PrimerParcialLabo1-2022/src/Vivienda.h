@@ -30,9 +30,9 @@ typedef struct
  * PARAMETRO	eVivienda viviendaMain[]
  * PARAMETRO	int TAM
  *
- * RETORNO		1 = ERROR  0 = INICIALIZACION EXITOSA
+ * RETORNO		void
  */
-int eVivienda_Inicializar(eVivienda viviendaMain[], int TAM);
+void eVivienda_Inicializar(eVivienda viviendaMain[], int TAM);
 
 
 /**

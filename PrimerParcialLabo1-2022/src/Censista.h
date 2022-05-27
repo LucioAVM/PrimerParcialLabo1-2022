@@ -9,7 +9,6 @@
 #define CENSISTA_H_
 #include <stdio.h>
 #include <stdlib.h>
-#include "Vivienda.h"
 
 typedef struct
 {
