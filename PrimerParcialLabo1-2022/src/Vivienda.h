@@ -1,8 +1,8 @@
 /*
  * Vivienda.h
  *
- *  Created on: 26 may. 2022
- *      Author: Ususario
+ *  Created on: 20 may. 2022
+ *      Author: Monsalbo lucio
  */
 
 

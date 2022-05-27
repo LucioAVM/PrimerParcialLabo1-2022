@@ -1,8 +1,8 @@
 /*
  ============================================================================
  Name        : PrimerParcialLabo1-2022.c
- Author      : 
- Version     :
+ Author      : Monsalbo lucio
+ Version     : 0.90
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
@@ -31,6 +31,9 @@ int main(void)
 
 	int menu;
 	int idVivienda;
+	int bandera;
+
+	bandera = 0;
 
 	idVivienda = 19999;
 
@@ -44,13 +47,14 @@ int main(void)
 			if(altaVivienda(viviendaMain,TAM, &idVivienda))//si la funcion devuelve 0 es verdadero(usar para validar)
 			{
 				printf("\n-----Vivienda dada de alta exitosamente----\n");
+				bandera = 1;
 			}else{
 				printf("\nAh ocurrido un error, intente nuevamente\n");
 			}
 			break;
 
 		case 2:
-			if(modificarVivienda(viviendaMain, TAM))
+			if(modificarVivienda(viviendaMain, TAM) && bandera == 1)
 			{
 				printf("Vivienda se ah modificado exitosamente\n");
 			}else{
@@ -59,7 +63,7 @@ int main(void)
 			break;
 
 		case 3:
-			if(bajaVivienda(viviendaMain, TAM))
+			if(bajaVivienda(viviendaMain, TAM) && bandera == 1)
 			{
 				printf("Vivienda se ah dado de baja exitosamente\n");
 			}else{
@@ -68,7 +72,7 @@ int main(void)
 			break;
 
 		case 4:
-			listarViviendas(viviendaMain, TAM);
+			listarViviendas(viviendaMain, TAM && bandera == 1);
 			break;
 
 		case 5:

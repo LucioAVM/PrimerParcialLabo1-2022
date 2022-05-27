@@ -1,8 +1,8 @@
 /*
  * Menu.h
  *
- *  Created on: 26 may. 2022
- *      Author: Ususario
+ *  Created on: 20 may. 2022
+ *      Author: Monsalbo lucio
  */
 
 #ifndef MENU_H_
@@ -11,8 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Vivienda.h"
 #include "Censista.h"
+#include "Vivienda.h"
 #include "Monsalbo.h"
 
 #define LIBRE 0
